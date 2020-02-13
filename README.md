@@ -32,4 +32,4 @@ QQ音乐官网接口
 ![播放器](https://github.com/WuKou/music/blob/master/README_IMAGE/7.jpg)
 ![播放列表](https://github.com/WuKou/music/blob/master/README_IMAGE/9.jpg)
 #### 个人中心
-![个人中心](https://github.com/WuKou/music/blob/master/README_IMAGE/11.jpg)
+![个人中心](https://github.com/WuKou/music/blob/master/README_IMAGE/10.jpg)
