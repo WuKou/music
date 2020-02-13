@@ -30,6 +30,6 @@ QQ音乐官网接口
 #### 播放器
 ![播放器](https://github.com/WuKou/music/tree/master/README_IMAGE/6.png)
 ![播放器](https://github.com/WuKou/music/tree/master/README_IMAGE/7.png)
-![播放列表](https://github.com/WuKou/music/tree/master/README_IMAGE/9.png)
+![播放列表](https://github.com/WuKou/music/blob/master/README_IMAGE/9.png)
 #### 个人中心
 ![个人中心](https://github.com/WuKou/music/tree/master/README_IMAGE/11.png)
