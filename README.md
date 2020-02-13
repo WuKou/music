@@ -20,7 +20,7 @@ npm install
 QQ音乐官网接口
 ### 效果图
 #### 首页推荐页、歌手页、排行页
-![推荐页](https://github.com/WuKou/music/tree/master/README_IMAGE1.png)
+![推荐页](https://github.com/WuKou/music/tree/master/README_IMAGE/1.png)
 ![歌手页](https://github.com/WuKou/music/tree/master/README_IMAGE/2.png)
 ![排行页](https://github.com/WuKou/music/tree/master/README_IMAGE/3.png)
 #### 搜索页、歌手详情页
