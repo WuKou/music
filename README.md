@@ -20,16 +20,16 @@ npm install
 QQ音乐官网接口
 ### 效果图
 #### 首页推荐页、歌手页、排行页
-![推荐页](https://github.com/WuKou/music/blob/master/README_IMG/1.png)
-![歌手页](https://github.com/WuKou/music/blob/master/README_IMG/2.png)
-![排行页](https://github.com/WuKou/music/blob/master/README_IMG/3.png)
+![推荐页](https://github.com/WuKou/music/tree/master/README_IMAGE1.png)
+![歌手页](https://github.com/WuKou/music/tree/master/README_IMAGE/2.png)
+![排行页](https://github.com/WuKou/music/tree/master/README_IMAGE/3.png)
 #### 搜索页、歌手详情页
-![搜索页](https://github.com/WuKou/music/blob/master/README_IMG/4_1.png)
-![搜索页](https://github.com/WuKou/music/blob/master/README_IMG/5.png)
-![歌手详情页](https://github.com/WuKou/music/blob/master/README_IMG/4.png)
+![搜索页](https://github.com/WuKou/music/tree/master/README_IMAGE/4_1.png)
+![搜索页](https://github.com/WuKou/music/tree/master/README_IMAGE/5.png)
+![歌手详情页](https://github.com/WuKou/music/tree/master/README_IMAGE/4.png)
 #### 播放器
-![播放器](https://github.com/WuKou/music/blob/master/README_IMG/6.png)
-![播放器](https://github.com/WuKou/music/blob/master/README_IMG/7.png)
-![播放列表](https://github.com/WuKou/music/blob/master/README_IMG/9.png)
+![播放器](https://github.com/WuKou/music/tree/master/README_IMAGE/6.png)
+![播放器](https://github.com/WuKou/music/tree/master/README_IMAGE/7.png)
+![播放列表](https://github.com/WuKou/music/tree/master/README_IMAGE/9.png)
 #### 个人中心
-![个人中心](https://github.com/WuKou/music/blob/master/README_IMG/11.png)
+![个人中心](https://github.com/WuKou/music/tree/master/README_IMAGE/11.png)
