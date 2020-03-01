@@ -10,6 +10,7 @@ var app = express()
 
 var apiRoutes = express.Router()
 
+// req，和 res 这两个参数分别代表请求对象和响应对象
 apiRoutes.get('/api/getDiscList', function(req, res) {
   const url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
   axios.get(url, {
@@ -17,9 +18,9 @@ apiRoutes.get('/api/getDiscList', function(req, res) {
       referer: 'https://c.y.qq.com/',
       host: 'c.y.qq.com'
     },
+    // req.query 就是请求的 query 参数
     params: req.query
-  }).then((response) => { // response 是 axios 返回的响应对象
-    let ret = response.data
+  }).then((response) => { // response 就是请求成功的响应对象，它并不是直接服务器返回的数据，axios 内部对响应数据做了一层封装。
     if (typeof ret === 'string') {
       const reg = /^\w+\(({.+})\)$/
       const matches = ret.match(reg)

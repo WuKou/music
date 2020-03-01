@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const debug = process.env.NODE_ENV !== 'production'
 
-// 添加获取 URL
+// 这个方法可以批量拿到这个歌曲列表的 midUrlInfo，接着遍历它就可以为每首歌获取 url 了
 export function getSongsUrl (songs) {
   const url = debug ? '/api/getPurlUrl' : '106.53.71.64/music/api/getPurlUrl'
 

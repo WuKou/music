@@ -74,18 +74,18 @@
     <transition name="mini">
       <div class="mini-player" v-show="!fullScreen" @click="open">
         <div class="icon">
-          <div class="imgWrapper" ref="miniWrapper"><img ref="miniImage" width="40" height="40" :src="currentSong.image" :class="cdCls" /></div>
+          <div class="imgWrapper" ref="miniWrapper">
+            <img ref="miniImage" width="40" height="40" :src="currentSong.image" :class="cdCls" />
+          </div>
         </div>
         <div class="text">
           <h2 class="name">{{ currentSong.name }}</h2>
           <p class="desc">{{ currentSong.singer }}</p>
         </div>
         <div class="control">
-          <div class="progress-circle-wrapper">
-            <progress-circle :radius="radius" :percent="percent">
-              <i @click.stop="togglePlaying" class="icon-mini" :class="miniIcon"></i>
-            </progress-circle>
-          </div>
+          <progress-circle :radius="radius" :percent="percent">
+            <i @click.stop="togglePlaying" class="icon-mini" :class="miniIcon"></i>
+          </progress-circle>
         </div>
         <div class="control" @click.stop="showPlaylist"><i class="icon-playlist"></i></div>
       </div>
@@ -136,7 +136,7 @@ export default {
   },
   computed: {
     cdCls() {
-      return this.playing ? 'play' : 'pause'
+      return this.playing ? 'play' : ''
     },
     playIcon() {
       return this.playing ? 'icon-pause' : 'icon-play'
@@ -701,6 +701,7 @@ export default {
     width: 100%
     height: 60px
     border-top: 1px solid #EEEEEE
+    box-sizing: border-box // 防止按播放暂停时图标位置改变
     background: $color-background
     &.mini-enter-active, &.mini-leave-active
       transition: all 0.4s
@@ -713,12 +714,12 @@ export default {
       .imgWrapper
         height: 100%
         width: 100%
-      img
-        border-radius: 50%
-        &.play
-          animation: rotate 10s linear infinite
-        &.pause
-          animation-play-state: paused
+        img
+          border-radius: 50%
+          &.play
+            animation: rotate 10s linear infinite
+          &.pause
+            animation-play-state: paused
     .text
       display: flex
       flex-direction: column
@@ -736,13 +737,12 @@ export default {
         font-size: $font-size-small
         color: $color-text-d
     .control
-      position: relative
       flex: 0 0 30px
       width: 30px
       padding: 0 10px
       .icon-play-mini, .icon-pause-mini, .icon-playlist
         font-size: 30px
-        color: $color-theme
+        color: #8ac6e59c
       .icon-mini
         font-size: 32px
         position: absolute

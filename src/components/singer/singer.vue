@@ -100,9 +100,9 @@ export default {
 
 <style lang="stylus" scoped>
   .singer
-    position fixed
-    top 88px
-    bottom 0
-    left 0
-    right 0
+    position: fixed
+    top: 88px
+    bottom: 0
+    left: 0
+    right: 0
 </style>

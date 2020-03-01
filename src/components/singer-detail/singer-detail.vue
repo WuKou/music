@@ -8,7 +8,7 @@
 import { getSingerDetail } from 'api/singer'
 import { ERR_OK } from 'api/config'
 import { mapGetters } from 'vuex'
-import { createSong, processSongsUrl } from 'common/js/song'
+import { createSong, processSongsUrl, isValidMusic } from 'common/js/song'
 import MusicList from 'components/music-list/music-list'
 
 export default {
@@ -35,6 +35,7 @@ export default {
   methods: {
     _getDetail() {
       getSingerDetail(this.singer.id).then((res) => {
+        // 刷新页面的时候，内层中的 vuex 是没有 singer.id 的，所以退回到 singer 页面
         if (!this.singer.id) {
           this.$router.push('/singer')
           return
@@ -49,8 +50,8 @@ export default {
     _normalizeSongs(list) {
       let ret = []
       list.forEach((item) => {
-        let { musicData } = item // 对象的解构赋值
-        if (musicData.songid && musicData.albummid) {
+        let { musicData } = item // 对象的解构赋值，拿到item里面的musicData属性
+        if (isValidMusic(musicData)) {
           ret.push(createSong(musicData))
         }
       })

@@ -61,6 +61,9 @@ export default {
       }
       if (this.pullup) {
         this.scroll.on('scrollEnd', () => {
+          // maxScrollY是scroll 最大纵向滚动位置。位置区间是 0 - maxScrollY，并且 maxScrollY 是负值。
+          // +50意思就是让默认的最大纵向滚动位置少50,比如默认最大可以滚动的值是-100,+50之后就变成了 -50
+          // 就是说,不需要滚动到最底部 -100 才能向下进行,滚到接近底部还有50的距离就可以,  这个值可以根据自己的想法设置
           if (this.scroll.y <= (this.scroll.maxScrollY + 50)) {
             this.$emit('scrollToEnd')
           }
