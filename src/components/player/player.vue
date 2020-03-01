@@ -380,7 +380,11 @@ export default {
       this.playingLyric = txt
     },
     middleTouchStart(e) {
+      // 代表开始移动
       this.touch.initiated = true
+      // 代表这是一次移动（过程）
+      this.touch.move = false
+      this.touch.directionLocked = ''
       let startX = e.touches[0].pageX
       let startY = e.touches[0].pageY
       this.touch.startX = startX
@@ -393,9 +397,25 @@ export default {
       let touch = e.touches[0]
       let deltaX = touch.pageX - this.touch.startX
       let deltaY = touch.pageY - this.touch.startY
-      if (Math.abs(deltaY) > Math.abs(deltaX)) {
+      let absDeltaX = Math.abs(deltaX)
+      let absDeltaY = Math.abs(deltaY)
+
+      if (!this.touch.directionLocked) {
+        if (absDeltaX > absDeltaY) {
+          this.touch.directionLocked = 'h' // lock horizontally
+        } else if (absDeltaY >= absDeltaX) {
+          this.touch.directionLocked = 'v' // lock vertically
+        }
+      }
+
+      if (this.touch.directionLocked === 'v') {
         return
       }
+
+      if (!this.touch.move) {
+        this.touch.move = true
+      }
+
       let left = this.currentShow === 'cd' ? 0 : -window.innerWidth
       let offsetWidth = Math.min(0, Math.max(-window.innerWidth, left + deltaX)) // 歌词列表的偏移量
       this.touch.percent = Math.abs(offsetWidth / window.innerWidth)
@@ -405,6 +425,9 @@ export default {
       this.$refs.middleL.style.transitionDuration = 0
     },
     middleTouchEnd() {
+      if (!this.touch.move) {
+        return
+      }
       let opacity
       let offsetWidth
       // 从右向左滑

@@ -6,6 +6,10 @@
 
 <script>
 import BScroll from 'better-scroll'
+
+const DIRECTION_H = 'horizontal'
+const DIRECTION_V = 'vertical'
+
 export default {
   name: 'Scroll',
   props: {
@@ -36,6 +40,14 @@ export default {
     data: {
       type: Array,
       default: null
+    },
+    direction: {
+      type: String,
+      default: DIRECTION_V
+    },
+    directionLockThreshold: {
+      type: Number,
+      default: 0
     }
   },
   mounted() {
@@ -51,10 +63,11 @@ export default {
       this.scroll = new BScroll(this.$refs.scroll, {
         probeType: this.probeType,
         click: this.click,
-        data: this.data
+        data: this.data,
+        eventPassthrough: this.direction === DIRECTION_V ? DIRECTION_H : DIRECTION_V,
+        directionLockThreshold: this.directionLockThreshold
       })
       if (this.listenScroll) {
-        // let me = this
         this.scroll.on('scroll', (pos) => { // 外层是 better-scroll 事件
           this.$emit('scroll', pos) // 内层是在当前 Vue 实例上派发一个 scroll 事件
         })
